@@ -1,5 +1,9 @@
-import { setRun } from './agent-data'
+import { randomUUID } from 'node:crypto'
 import { inngest } from './inngest'
+import { agentState, getRun, goalSatisfied, setRun, recordDecision, recordToolAction, setIteration } from './agent-data'
+import {chooseAction} from './agent-brain'
+
+
 
 // The alert intake has already opened an incident. Build its harness here.
 export const incidentAgent = inngest.createFunction(
